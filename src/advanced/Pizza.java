@@ -12,9 +12,7 @@ public class Pizza extends JFrame implements ItemListener {
     JLabel aLabel = new JLabel("Paulos's American Pie");
     JTextField totPrice = new JTextField(10);
     int[] pizzaPrice = {7, 10, 10, 8, 8, 8, 8};
-    int totalPrice = 0;
     String output;
-    int pizzaNum;
 
     public Pizza() {
         super("Pizza List");
@@ -44,9 +42,7 @@ public class Pizza extends JFrame implements ItemListener {
     public void itemStateChanged(ItemEvent e) {
         Object source = e.getSource();
         if (source == pizzaBox) {
-            int pizzaNum = pizzaBox.getSelectedIndex();
-            totalPrice = pizzaPrice[pizzaNum];
-            output = "Pizza Price $" + totalPrice;
+            output = "Pizza Price $" + pizzaPrice[pizzaBox.getSelectedIndex()];
             totPrice.setText(output);
         }
     }

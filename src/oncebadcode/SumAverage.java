@@ -1,6 +1,5 @@
 package oncebadcode;
 
-// Sum and average an array of integers
 public class SumAverage {
     public static void main(String[] args) {
         int[] someNums = {4, 17, 22, 8, 35};

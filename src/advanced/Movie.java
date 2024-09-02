@@ -4,14 +4,7 @@ import javax.swing.*;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Movie {
-    private final String name;
-    private final int release;
-
-    public Movie(String name, int release) {
-        this.name = name;
-        this.release = release;
-    }
+public record Movie(String name, int release) {
 
     public static void main(String[] args) {
         Movie[] movies = new Movie[8];
@@ -27,10 +20,10 @@ public class Movie {
         entry = JOptionPane.showInputDialog(null, "Sort Movies by\n(N)ame, or (Y)ear");
 
         if (entry.equalsIgnoreCase("N")) {
-            movies = Arrays.stream(movies).sorted(Comparator.comparing(Movie::getName)).distinct().toArray(Movie[]::new);
+            movies = Arrays.stream(movies).sorted(Comparator.comparing(Movie::name)).distinct().toArray(Movie[]::new);
             message = "Sorted by Name\n";
         } else if (entry.equalsIgnoreCase("Y")) {
-            movies = Arrays.stream(movies).sorted(Comparator.comparing(Movie::getRelease)).distinct().toArray(Movie[]::new);
+            movies = Arrays.stream(movies).sorted(Comparator.comparing(Movie::release)).distinct().toArray(Movie[]::new);
             message = "Sorted by Year\n";
         } else {
             throw new IllegalArgumentException("Invalid input: " + entry);
@@ -42,17 +35,9 @@ public class Movie {
     public static void display(Movie[] movies, String msg) {
         StringBuilder msgBuilder = new StringBuilder(msg);
         for (Movie movie : movies)
-            msgBuilder.append(movie.getName()).append(", ").append(movie.getRelease()).append("\n");
+            msgBuilder.append(movie.name()).append(", ").append(movie.release()).append("\n");
         msg = msgBuilder.toString();
         JOptionPane.showMessageDialog(null, msg);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getRelease() {
-        return release;
     }
 }
 
