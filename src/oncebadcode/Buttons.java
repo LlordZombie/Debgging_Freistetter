@@ -36,4 +36,5 @@ public class Buttons extends JFrame {
     public static void main(String[] args) {
         new Buttons();
     }
+
 }
