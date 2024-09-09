@@ -23,7 +23,6 @@ public class Buttons extends JFrame {
         panel1.add(button3);
         panel1.add(button4);
         panel1.add(button5);
-
         button1.addActionListener(_ -> panel2.setBackground(Color.RED));
         button2.addActionListener(_ -> panel2.setBackground(Color.PINK));
         button3.addActionListener(_ -> panel2.setBackground(Color.ORANGE));

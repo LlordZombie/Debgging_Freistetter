@@ -1,4 +1,4 @@
-package advanced;
+package oncebadcode.advanced;
 
 import java.util.Scanner;
 
@@ -24,8 +24,9 @@ public class Game {
         } else System.out.println("Play On!");
         System.out.println("You are at an Iggy concert, and you hear this lyric 'Are you ready?, start running.'");
         System.out.println("Suddenly, Iggy stops and says, 'Who wants to race me at running?'");
-        String userinput = input.nextLine();
         System.out.println("Do you want to race Iggy on stage?");
+        String userinput = input.nextLine();
+
         if (userinput.equalsIgnoreCase("yes")) {
             System.out.println("You and Iggy start racing. It's neck and neck! You win by a shoelace!");
             System.out.println("Iggy shakes your hand and says 'Thank you! You should race again at the next concert!'");

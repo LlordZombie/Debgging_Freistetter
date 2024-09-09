@@ -1,4 +1,4 @@
-package advanced;
+package oncebadcode.advanced;
 
 import javax.swing.*;
 import java.awt.*;

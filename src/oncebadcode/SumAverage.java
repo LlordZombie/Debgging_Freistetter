@@ -7,6 +7,7 @@ public class SumAverage {
         for (int someNum : someNums) {
             tot += someNum;
         }
-        System.out.println("Sum is "+ tot); System.out.println("Average is " + tot/someNums.length);
+        System.out.println("Sum is " + tot);
+        System.out.println("Average is " + tot / someNums.length);
     }
 }
